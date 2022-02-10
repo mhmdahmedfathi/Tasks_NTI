@@ -1,4 +1,3 @@
-dealWithData = require("./dealWithData")
 
 const CustomerData = [
     {
