@@ -48,3 +48,5 @@ yargs.command({
     describe:"responsable for Showing all customers",
     handler:()=>Functions.ShowCustomers()
 })
+
+yargs.argv
