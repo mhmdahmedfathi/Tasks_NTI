@@ -15,7 +15,8 @@ const AddCustomer = (argv) =>{
         Customer[Data.ele] = Data.default
     })
     const Customers = readDataFromJSON("./db/Customers.json")
-    Customers.push(Customer) 
+    Customers.push(Customer)
+    console.log("Done Adding ",{Customer})
     writeDataToFile("./db/Customers.json", Customers)   
 }
 
@@ -44,6 +45,7 @@ const AddTransaction = (argv) =>{
             Customers[index].CustomerBalance -=  Transaction.balance      
         }
         writeDataToFile("./db/Customers.json", Customers)   
+        console.log("Done Adding ",{Transaction})
        
     } catch (error) {
         console.log(error)       
