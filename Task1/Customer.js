@@ -1,15 +1,15 @@
-const CustomerHeads = ["CustomerName","CustomerBalance"]
-const addCustomer = document.querySelector("#addCustomer")  //form   undife =>false
-const addTransaction = document.querySelector("#addTransaction")  //form   undife =>false
-
+const addCustomer = document.querySelector("#addCustomer")
+const addTransaction = document.querySelector("#addTransaction")  
 const datawrap = document.querySelector("#datawrap")
 const delAll = document.querySelector("#delAll")
 const createMyOwnElement = (element) => {
     try {
         let myElement = document.createElement(element.element)
         element.parent.appendChild(myElement)
-        if (element.textContent) myElement.innerHTML = element.textContent
-        if (element.classes) myElement.classList = element.classes  // <option class> 
+        if (element.textContent) 
+            myElement.innerHTML = element.textContent
+        if (element.classes) 
+            myElement.classList = element.classes   
         element.attributes.forEach(attribute => {
             myElement.setAttribute(attribute.key, attribute.val)
         })
@@ -33,24 +33,36 @@ const readFromStorage = (storageItem) => {
     }
     return data
 }
-//write data in localstorage
+
 const writeDataToStorage = (storageItem, data) => {
     localStorage.setItem(storageItem, JSON.stringify(data))
 }
-// draw Customer
-const drawCustomer = (Customer,index) => {
-    const tr = createMyOwnElement(elementObjCreator("tr", datawrap, null, null, []))
-    createMyOwnElement(elementObjCreator("td", tr, Customer.accNum, null, []))
-    createMyOwnElement(elementObjCreator("td", tr, Customer.CustomerName, null, []))
-    createMyOwnElement(elementObjCreator("td", tr, Customer.CustomerBalance, null, []))
-    let transactions = ""
 
+const drawCustomer = (Customer,index) => {
+    const tr = createMyOwnElement(
+        elementObjCreator("tr", datawrap, null, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr, Customer.accNum, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr, Customer.CustomerName, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr, Customer.CustomerBalance, null, [])
+    )
+    
+    let transactions = ""
     Customer.transactions.forEach((transaction)=>{
         transactions += `transactionType: ${transaction.transactionType} , Balance: ${transaction.balance} <br/>`
     })
-    createMyOwnElement(elementObjCreator("td", tr, transactions, null, []))
-    
-    const td = createMyOwnElement(elementObjCreator("td", tr, null, null, []))
+
+    createMyOwnElement(
+        elementObjCreator("td", tr, transactions, null, [])
+    )
+    const td = createMyOwnElement(
+        elementObjCreator("td", tr, null, null, [])
+    )
     const singleBtn = createMyOwnElement(
         elementObjCreator("button", td, "Show", "btn btn-success mx-3", [])
     )
@@ -60,18 +72,42 @@ const drawCustomer = (Customer,index) => {
     )
     delBtn.addEventListener("click", ()=>deleteItem(index))
 }
+
 const deleteItem = (index)=>{
-    //index
     const Customers = readFromStorage("Customers")
     Customers.splice(index,1)
     writeDataToStorage("Customers", Customers)
     drawAllCustomers(Customers)
 }
 const showElement=(Customer)=>{
-    writeDataToStorage("Customer", Customer)
+    datawrap.textContent = ""
+    createMyOwnElement(elementObjCreator("tr", datawrap, null, "alert alert-danger", []))
+    const tr2 = createMyOwnElement(
+        elementObjCreator("tr", datawrap, null, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr2, Customer.accNum, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr2, Customer.CustomerName, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr2, Customer.CustomerBalance, null, [])
+    )
+    
+    let transactions = ""
+    Customer.transactions.forEach((transaction)=>{
+        transactions += `transactionType: ${transaction.transactionType} , Balance: ${transaction.balance} <br/>`
+    })
+
+    createMyOwnElement(
+        elementObjCreator("td", tr2, transactions, null, [])
+    )
+    createMyOwnElement(
+        elementObjCreator("td", tr2, null, null, [])
+    )
+    
 }
-
-
 
 const drawEmptyRow = (colSpan) => {
     const tr = createMyOwnElement(elementObjCreator("tr", datawrap, null, "alert alert-danger", []))
@@ -99,12 +135,15 @@ const drawCustomerName = (Customers)=>{
         createMyOwnElement(elementObjCreator("option", document.querySelector("#CustomerName"), Customer.CustomerName, null, [{ key: "value", val: Customer.CustomerName }]))
     })
 }
-//add Customer page
+
 if (addCustomer) {
     addCustomer.addEventListener("submit",  (e)=> {
         e.preventDefault()
+        const CustomerHeads = ["CustomerName","CustomerBalance"]
         let Customer = { accNum: Date.now(),transactions:[] }
-        CustomerHeads.forEach((head) => Customer[head] = addCustomer.elements[head].value)
+        CustomerHeads.forEach((head) => {
+            Customer[head] = addCustomer.elements[head].value
+        })
         const Customers = readFromStorage("Customers") 
         Customers.push(Customer) 
         writeDataToStorage("Customers", Customers) 
@@ -133,7 +172,6 @@ if (addTransaction) {
         }else{
             Customers[index].CustomerBalance -=  balance      
         }
-        
         writeDataToStorage("Customers", Customers) 
         addTransaction.reset()
         window.location.href = "index.html"
