@@ -3,22 +3,28 @@ const {writeDataToFile, readDataFromJSON} = require("./DealingWithJson")
 const {CustomerData,TransactionData} = require("./validation")
 
 const AddCustomer = (argv) =>{
-    let errors = []
-    let Customer = { accNum: Date.now(),transactions:[] }
-    CustomerData.forEach((Data)=>{
-        let valid = Data.invalid(argv[Data.ele]) 
-        if(valid)
-            errors.push(valid)
-        if(!Data.default)
-            return Customer[Data.ele] = argv[Data.ele]
+    try {
 
-        Customer[Data.ele] = Data.default
-    })
-    if(errors.length != 0) throw new Error(errors)
-    const Customers = readDataFromJSON("./db/Customers.json")
-    Customers.push(Customer)
-    console.log("Done Adding ",{Customer})
-    writeDataToFile("./db/Customers.json", Customers)   
+        let errors = []
+        let Customer = { accNum: Date.now(),transactions:[] }
+        CustomerData.forEach((Data)=>{
+            let valid = Data.invalid(argv[Data.ele]) 
+            if(valid)
+                errors.push(valid)
+            if(!Data.default)
+                return Customer[Data.ele] = argv[Data.ele]
+    
+            Customer[Data.ele] = Data.default
+        })
+        if(errors.length != 0) throw new Error(errors)
+        const Customers = readDataFromJSON("./db/Customers.json")
+        Customers.push(Customer)
+        console.log("Done Adding ",{Customer})
+        writeDataToFile("./db/Customers.json", Customers)   
+            
+    } catch (error) {
+        console.log(error.message)        
+    }
 }
 
 
@@ -50,7 +56,7 @@ const AddTransaction = (argv) =>{
         console.log("Done Adding ",{Transaction})
        
     } catch (error) {
-        console.log(error)       
+        console.log(error.message)       
     }
 }
 

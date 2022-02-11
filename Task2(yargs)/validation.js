@@ -32,7 +32,7 @@ const TransactionData = [
         ele: "type",
         default: false,
         invalid: function (data) {
-            if (data !== "withdraw" || data !=="addBalance") 
+            if (data != "withdraw" || data != "addBalance") 
                 return "type must be withdraw or addBalance"
             else 
                 return false
