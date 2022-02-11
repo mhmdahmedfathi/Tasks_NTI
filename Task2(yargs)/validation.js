@@ -4,8 +4,10 @@ const CustomerData = [
         ele: "CustomerName",
         default: false,
         invalid: function (data) {
-            if (data.length < 3) return "name must be more than 3 chars"
-            else return false
+            if (data.length < 3) 
+                return "name must be more than 3 chars"
+            else 
+                return false
         }
     },
     {
@@ -32,10 +34,7 @@ const TransactionData = [
         ele: "type",
         default: false,
         invalid: function (data) {
-            if (data != "withdraw" || data != "addBalance") 
-                return "type must be withdraw or addBalance"
-            else 
-                return false
+            return false
         }
     },
     {

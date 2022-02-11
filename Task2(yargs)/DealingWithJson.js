@@ -5,7 +5,10 @@ const writeDataToFile = (fileName, data) =>{
         if(!Array.isArray(data)) 
             throw new Error("invalid data type")
         fs.writeFileSync(fileName, JSON.stringify(data))
-        console.log("data added")
+        if (data.length > 0 )
+            console.log("data added")
+        else
+            console.log("data deleted")
     }
     catch(err){
         console.log(err.message)

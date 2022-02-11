@@ -69,9 +69,10 @@ const ShowCustomers = ()=>{
     Customers.forEach(user=>{
         let displayed = ""
         CustomerData.forEach((data)=> {
-            displayed += data.ele + " => " + user[data.ele]
+            displayed += data.ele + " => " + user[data.ele] + "\n"
+            displayed += "His Transactions : \n"
             user.transactions.forEach((transaction)=>{
-                displayed += `${transaction.type} => ${transaction.balance} \n`
+                displayed += ` Transaction type : ${transaction.type} => and its balanace : ${transaction.balance} \n`
             })
         })
         console.log(displayed)
