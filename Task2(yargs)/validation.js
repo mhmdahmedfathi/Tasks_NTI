@@ -18,7 +18,7 @@ const CustomerData = [
                 return false
         }
     }
-],
+]
 const TransactionData = [
     {
         ele: "name",

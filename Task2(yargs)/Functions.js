@@ -14,6 +14,7 @@ const AddCustomer = (argv) =>{
 
         Customer[Data.ele] = Data.default
     })
+    if(errors.length != 0) throw new Error(errors)
     const Customers = readDataFromJSON("./db/Customers.json")
     Customers.push(Customer)
     console.log("Done Adding ",{Customer})
@@ -33,6 +34,7 @@ const AddTransaction = (argv) =>{
                 return Transaction[Data.ele] = argv[Data.ele]
             Transaction[Data.ele] = Data.default
         })
+        if(errors.length != 0) throw new Error(errors)
         const Customers = readDataFromJSON("./db/Customers.json")
         let index = Customers.findIndex(Customer=>Transaction.name===Customer.CustomerName)
         delete Transaction.name

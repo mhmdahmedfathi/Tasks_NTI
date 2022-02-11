@@ -1,0 +1,13 @@
+[
+    {
+        "accNum": 1644536642826,
+        "transactions": [
+            {
+                "type": "addBalance",
+                "balance": 100
+            }
+        ],
+        "CustomerName": "mohamed",
+        "CustomerBalance": 200
+    }
+]

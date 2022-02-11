@@ -1,5 +1,5 @@
 const yargs = require("yargs")
-const Functions = require("Functions")
+const Functions = require("./Functions")
 
 yargs.command({
     command:"AddCustomer",
