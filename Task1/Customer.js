@@ -87,7 +87,7 @@ const deleteItem = (index)=>{
 
 const EditItem = (Customer)=>{
     writeDataToStorage("CustomerEdit", Customer)
-    window.href.location = "Edit.html"
+    window.location.href = "Edit.html"
 }
 const showElement=(Customer)=>{
     datawrap.textContent = ""
