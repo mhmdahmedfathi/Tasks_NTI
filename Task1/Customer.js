@@ -1,7 +1,9 @@
 const addCustomer = document.querySelector("#addCustomer")
+const editCustomer = document.querySelector("#EditCustomer")
 const addTransaction = document.querySelector("#addTransaction")  
 const datawrap = document.querySelector("#datawrap")
 const delAll = document.querySelector("#delAll")
+const CustomerHeads = ["CustomerName","CustomerBalance"]
 const createMyOwnElement = (element) => {
     try {
         let myElement = document.createElement(element.element)
@@ -26,7 +28,6 @@ const readFromStorage = (storageItem) => {
     let data
     try {
         data = JSON.parse(localStorage.getItem(storageItem))
-        if (!Array.isArray(data)) throw new Error("Data not array")
     }
     catch (e) {
         data = []
@@ -67,6 +68,10 @@ const drawCustomer = (Customer,index) => {
         elementObjCreator("button", td, "Show", "btn btn-success mx-3", [])
     )
     singleBtn.addEventListener("click", ()=> showElement(Customer))
+    const editBtn = createMyOwnElement(
+        elementObjCreator("a", td, "Edit", "btn btn-warning mx-3", [{ key: "href", val: "edit.html" }])
+    )
+    editBtn.addEventListener("click", ()=>EditItem(Customer))
     const delBtn = createMyOwnElement(
         elementObjCreator("button", td, "delete", "btn btn-danger mx-3", [])
     )
@@ -78,6 +83,11 @@ const deleteItem = (index)=>{
     Customers.splice(index,1)
     writeDataToStorage("Customers", Customers)
     drawAllCustomers(Customers)
+}
+
+const EditItem = (Customer)=>{
+    writeDataToStorage("CustomerEdit", Customer)
+    window.href.location = "Edit.html"
 }
 const showElement=(Customer)=>{
     datawrap.textContent = ""
@@ -139,7 +149,6 @@ const drawCustomerName = (Customers)=>{
 if (addCustomer) {
     addCustomer.addEventListener("submit",  (e)=> {
         e.preventDefault()
-        const CustomerHeads = ["CustomerName","CustomerBalance"]
         let Customer = { accNum: Date.now(),transactions:[] }
         CustomerHeads.forEach((head) => {
             Customer[head] = addCustomer.elements[head].value
@@ -174,6 +183,24 @@ if (addTransaction) {
         }
         writeDataToStorage("Customers", Customers) 
         addTransaction.reset()
+        window.location.href = "index.html"
+    })
+}
+if (editCustomer) {
+    const Customer = readFromStorage("CustomerEdit")
+    CustomerHeads.forEach((head) => {
+        editCustomer.elements[head].value = Customer[head]
+    })
+    
+    editCustomer.addEventListener("submit",  (e)=> {
+        e.preventDefault()
+        const Customers = readFromStorage("Customers") 
+        let index = Customers.findIndex(One => Customer.accNum === One.accNum )
+        CustomerHeads.forEach((head) => {
+            Customers[index][head] = editCustomer.elements[head].value
+        })
+        writeDataToStorage("Customers", Customers) 
+        editCustomer.reset()
         window.location.href = "index.html"
     })
 }
