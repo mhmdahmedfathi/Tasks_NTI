@@ -1,13 +1,31 @@
 [
     {
-        "accNum": 1644536642826,
+        "accNum": 1644778816041,
+        "transactions": [],
+        "CustomerName": "mohamed",
+        "CustomerBalance": 100
+    },
+    {
+        "accNum": 1644778945024,
         "transactions": [
+            {
+                "type": "addBalance",
+                "balance": 100
+            },
+            {
+                "type": "withdraw",
+                "balance": 100
+            },
+            {
+                "type": "withdraw",
+                "balance": 100
+            },
             {
                 "type": "addBalance",
                 "balance": 100
             }
         ],
-        "CustomerName": "mohamed",
-        "CustomerBalance": 200
+        "CustomerName": "mohamed2",
+        "CustomerBalance": 100
     }
 ]
