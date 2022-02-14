@@ -1,0 +1,35 @@
+{{>header}}
+{{>navbar}}
+<form method="post" action="delAll">
+    <button class="btn btn-danger">delete all</button>
+</form>
+{{!-- <a href="delAll" class="btn btn-danger">delete all</a> --}}
+<table class="table table-bordered my-4">
+    <thead>
+        <tr>
+            <th>title</th>
+            <th>Content</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#if isEmpty}}
+            <tr class="alert alert-danger text-center">
+                <td colspan="4">No Tasks Yet</td>
+            </tr>
+        {{else}}
+            {{#each allTasks}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.content}}</td>
+                <td>
+                    <a href="/single/{{this.title}}" class="btn btn-success mx-2">Show</a>
+                    <a href="/edit/{{this.title}}" class="btn btn-warning mx-2">Edit</a>
+                    <a href="/del/{{this.title}}" class="btn btn-danger mx-2">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        {{/if}}
+    </tbody>
+</table>
+{{>footer}}

@@ -1,0 +1,11 @@
+{{>header}}
+{{>navbar}}
+<div class="border border-3 border-primary p-3">
+    {{#if task}}
+       title : {{task.title}}<br>
+       Content : {{task.content}}
+    {{else}}
+        task not found
+    {{/if}}
+</div>
+{{>footer}}
