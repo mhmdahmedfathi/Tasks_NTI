@@ -1,0 +1,29 @@
+{{>header}}
+{{>navbar}}
+<div class="border border-3 border-primary p-3">
+    {{#if Account}}
+       accNum : {{Account.accNum}}<br>
+       Name : {{Account.Name}}<br>
+       Balance : {{Account.Balance}}<br>
+       Transaction :
+    <table  class="table table-bordered my-4">   
+        <thead>
+        <tr>
+            <th>type</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+                {{#each Account.Transaction}}
+                <tr>
+                    <td>{{this.TransactionType}}</td>
+                    <td>{{this.Balance}}</td>
+                </tr>
+                {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+        Account not found
+    {{/if}}
+</div>
+{{>footer}}

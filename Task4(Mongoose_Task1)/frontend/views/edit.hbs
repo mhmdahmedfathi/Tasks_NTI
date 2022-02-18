@@ -1,0 +1,17 @@
+{{>header}}
+{{>navbar}}
+    <form method="post">
+        <div class="mb-3">
+            <input class="form-control" placeholder="AccNum" name="AccNum" disabled value="{{Account.AccNum}}">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Name" name="Name" value="{{Account.Name}}">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Balance" name="Balance" value="{{Account.Balance}}">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">edit</button>
+        </div>
+    </form>
+{{>footer}}

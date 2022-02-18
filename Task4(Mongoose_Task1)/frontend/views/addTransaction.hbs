@@ -1,0 +1,19 @@
+{{>header}}
+{{>navbar}}
+    <form method="post">
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" name="TransactionType" id="TransactionType">
+                    <option selected disabled>Transaction Type</option>
+                    <option value="withdraw" >withdraw</option>
+                    <option value="addBalance">addBalance</option>
+                    
+            </select>    
+        </div>
+        <div class="mb-3">
+            <input class="form-control" placeholder="Balance" name="Balance">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">add Transaction</button>
+        </div>
+    </form>
+{{>footer}}
