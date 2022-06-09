@@ -153,8 +153,12 @@ if (addCustomer) {
         CustomerHeads.forEach((head) => {
             Customer[head] = addCustomer.elements[head].value
         })
-        const Customers = readFromStorage("Customers") 
-        Customers.push(Customer) 
+        let Customers = readFromStorage("Customers") 
+        if(Customers) 
+            Customers.push(Customer)
+        else {
+            Customers = [Customer]
+        }
         writeDataToStorage("Customers", Customers) 
         addCustomer.reset()
         window.location.href = "index.html"
