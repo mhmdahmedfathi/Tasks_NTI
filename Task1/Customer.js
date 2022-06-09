@@ -113,9 +113,9 @@ const showElement=(Customer)=>{
     createMyOwnElement(
         elementObjCreator("td", tr2, transactions, null, [])
     )
-    createMyOwnElement(
-        elementObjCreator("td", tr2, null, null, [])
-    )
+
+    const element = document.getElementById("Control");
+    element.remove()
     
 }
 
