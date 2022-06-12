@@ -3,6 +3,13 @@
     this is simulation of bank which you can add clients and do more than one transaction for each client and
     save all this informations in localstorage
 
+## 💻 Built Using <a name = "tech"></a>
+- [HTML]()
+- [BootStrap]()
+- [Javascript]()
+
+
+
 ## 📷 Screenshots
 
 <div name="screenshots" align="center">
