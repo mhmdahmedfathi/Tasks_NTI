@@ -71,10 +71,14 @@ const ShowCustomers = ()=>{
         CustomerData.forEach((data)=> {
             displayed += data.ele + " => " + user[data.ele] + "\n"
         })
-        displayed += "His Transactions : \n"
-        user.transactions.forEach((transaction)=>{
-            displayed += `Transaction type : ${transaction.type} => and its balanace : ${transaction.balance} \n`
-        })
+        if(user.transactions.length != 0){
+            displayed += "His Transactions : \n"
+            user.transactions.forEach((transaction)=>{
+                displayed += `${transaction.type} => and its balance : ${transaction.balance} \n`
+            })
+        }else{
+            displayed += "Has No Transactions :( \n"
+        }
         console.log(displayed)
     })
 }

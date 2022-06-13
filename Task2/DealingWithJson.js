@@ -8,7 +8,7 @@ const writeDataToFile = (fileName, data) =>{
         if (data.length > 0 )
             console.log("data added")
         else
-            console.log("data deleted")
+            console.log("All Custmores Deleted Hope you know what are you doing :(") 
     }
     catch(err){
         console.log(err.message)
