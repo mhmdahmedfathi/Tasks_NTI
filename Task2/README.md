@@ -19,10 +19,44 @@
 
 <div name="Logs" align="center">
     
+### if you want to add client, you simply have to enter 2 args which are his name and his balance so you can type ```node index.js AddCustomer --CustomerName=<name> --CustomerBalance=<balance>```
+#### as an example for name = mhmd and balance = 1500 you wil find the output in the console as this
+```
+Done Adding  {
+  Customer: {
+    accNum: 1655162844693,
+    transactions: [],
+    CustomerName: 'mhmd',
+    CustomerBalance: 1500
+  }
+}
+data added
 
+```
+### If you try to add customer with the same name, you will get this output in the console
+```
+ Sorry about that but Customer with this name already exists
+
+```
+
+
+### then you want to add client but by mistake you didn't add any args or one of 2 args are missing , you will find the error message 
+```
+index.js AddCustomer
+
+responsable for Adding customer to mocking data
+
+Options:
+  --help             Show help                                         [boolean]
+  --version          Show version number                               [boolean]
+  --CustomerName     customer name                                    [required]
+  --CustomerBalance  balance of the customer                          [required]
+
+Missing required arguments: CustomerName, CustomerBalance
+```
 
   
-## then you want to see all clients and all their transactions , you can type ```node index.js ShowCustomers```
+### then you want to see all clients and all their transactions , you can type ```node index.js ShowCustomers```
 
 ``` 
  CustomerName => mohamed
@@ -38,7 +72,7 @@
  addBalance => and its balance : 100
 ```
 
-## if you want to delete all clients , you can type ```node index.js DeleteCustomers```
+### if you want to delete all clients , you can type ```node index.js DeleteCustomers```
 
 ```
    All Custmores Deleted Hope you know what are you doing :(
