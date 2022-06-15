@@ -27,11 +27,11 @@ yargs.command({
         },
         type:{
             demandOption:true,
-            describe:"WithDraw or add"
+            describe:"WithDraw or add Transaction"
         },
         balance:{
             demandOption:true,
-            describe:"balance of the customer"
+            describe:"balance of the Transaction"
         }  
     },
     handler:(argv)=>Functions.AddTransaction(argv)

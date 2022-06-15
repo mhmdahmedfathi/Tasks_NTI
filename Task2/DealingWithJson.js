@@ -6,7 +6,7 @@ const writeDataToFile = (fileName, data) =>{
             throw new Error("invalid data type")
         fs.writeFileSync(fileName, JSON.stringify(data))
         if (data.length > 0 )
-            console.log("data added")
+            console.log("Customer added")
         else
             console.log("All Custmores Deleted Hope you know what are you doing :(") 
     }

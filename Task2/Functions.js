@@ -18,10 +18,14 @@ const AddCustomer = (argv) =>{
         })
         if(errors.length != 0) throw new Error(errors)
         const Customers = readDataFromJSON("./db/Customers.json")
-        Customers.push(Customer)
-        console.log("Done Adding ",{Customer})
-        writeDataToFile("./db/Customers.json", Customers)   
-            
+        let index = Customers.findIndex(one=>one.CustomerName===Customer.CustomerName)
+        if(index === -1){    
+            Customers.push(Customer)
+            console.log("Done Adding ",{Customer})
+            writeDataToFile("./db/Customers.json", Customers)   
+        }else{
+            throw new Error("\n Sorry about that but Customer with this name already exists \n")
+        }    
     } catch (error) {
         console.log(error.message)        
     }
