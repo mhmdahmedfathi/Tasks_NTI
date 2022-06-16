@@ -33,7 +33,7 @@ Done Adding  {
 data added
 
 ```
-### If you try to add customer with the same name, you will get this output in the console
+### If you try to add customer with the same name, you will get this output in the console ** and sure every other validation is set **
 ```
  Sorry about that but Customer with this name already exists
 
@@ -54,8 +54,35 @@ Options:
 
 Missing required arguments: CustomerName, CustomerBalance
 ```
+### then you want to add balance Transaction to the customer, you can type ```node index.js AddTransaction --name=<name> --type=addBalance --balance=<balance>```
+If the user is found you will see
+```
+data added
+Done Adding  { Transaction: { type: 'addBalance', balance: 1500 } }
 
-  
+```
+
+if the user is not exist,you will see
+```
+No Customer with this name found
+```
+### when you addTransaction the type can be only addBalance or WithDraw nothing else is accepted
+### so to add withdraw transaction, you can enter ```node index.js AddTransaction --name=<name> --type=Withdraw --balance=<balance>```
+
+if everything is corrected, then
+```
+data added
+Done Adding  { Transaction: { type: 'Withdraw', balance: 1500 } }
+
+```
+
+if your balance is less than Withdraw balance, then
+```
+You can't withdraw Balance greater than your accual balance
+
+```
+
+
 ### then you want to see all clients and all their transactions , you can type ```node index.js ShowCustomers```
 
 ``` 
