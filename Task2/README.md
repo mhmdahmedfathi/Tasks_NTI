@@ -3,11 +3,12 @@
 This is a task for testing argsument of function in javascript and deal with the console.
 the structure of the code is:
 
-1.  index.js is the main file that will run the programm and contains yargs module.
-2.  validation.js is the file that will validate the input
-3.  Functions.js is the file that will contain the main functions
+-  index.js is the main file that will run the programm and contains yargs module.
+-  validation.js is the file that will validate the input
+-  Functions.js is the file that will contain the main functions
     that takes the input and checks its validity and do provided job.
-4.  Dealingwithjson.js is the main file that deals with json file either by input or output.
+-  Dealingwithjson.js is the main file that deals with json file either by input or output.
+-  db/Customers.json is the json file that we are using to store data
 
 ## 💻 Built Using <a name = "tech"></a>
 
@@ -37,7 +38,7 @@ data added
 
 ```
 
-then you want to add client but by mistake you didn't add any args or one of 2 args are missing , you will find the error message
+if you want to add client but by mistake you didn't add any args or one of 2 args are missing , you will find the error message
 
 ```
 index.js AddCustomer
@@ -70,7 +71,7 @@ balance must be greater than zero
 
 when you addTransaction the type can be only addBalance or Withdraw nothing else is accepted
 
-#### then you want to add balance Transaction to the customer, you can type `node index.js AddTransaction --name=<name> --type=addBalance --balance=<balance>`
+#### if you want to add balance Transaction to the customer, you can type `node index.js AddTransaction --name=<name> --type=addBalance --balance=<balance>`
 
 If the user is found you will see
 
@@ -86,7 +87,7 @@ if the user is not exist,you will see
 No Customer with this name found
 ```
 
-#### so to add withdraw transaction, you can enter `node index.js AddTransaction --name=<name> --type=Withdraw --balance=<balance>`
+#### if you want to add withdraw transaction, you can enter `node index.js AddTransaction --name=<name> --type=Withdraw --balance=<balance>`
 
 if everything is corrected, then
 
@@ -127,10 +128,10 @@ Make sure you entered the correct type
  CustomerName => mohamed2
  CustomerBalance => 100
  His Transactions :
- addBalance => and its balance : 100
- withdraw => and its balance : 100
- withdraw => and its balance : 100
- addBalance => and its balance : 100
+ addBalance => its balance : 100
+ withdraw => its balance : 100
+ withdraw => its balance : 100
+ addBalance => its balance : 100
 ```
 
 ### DeleteCustomers
@@ -138,9 +139,9 @@ Make sure you entered the correct type
 #### if you want to delete all clients , you can type `node index.js DeleteCustomers`
 
 ```
-   All Custmores Deleted Hope you know what are you doing :(
+   All Customers have been Deleted Hope you know what are you doing :(
 ```
 
 </div>
 
-Happy bank transactions and happy coding :)
+Happy bank transactions and happy dealing with the CLI :)
