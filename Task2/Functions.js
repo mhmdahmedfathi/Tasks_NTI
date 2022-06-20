@@ -54,7 +54,10 @@ const AddTransaction = (argv) =>{
         if(Transaction.type === "addBalance"){
             Customers[index].CustomerBalance += parseInt(Transaction.balance)  
         }else{
-            Customers[index].CustomerBalance -=  Transaction.balance      
+            if(Customers[index].CustomerBalance - Transaction.balance > 0)
+                Customers[index].CustomerBalance -=  Transaction.balance      
+            else 
+                throw new Error("You can't withdraw Balance greater than your accual balance")
         }
         writeDataToFile("./db/Customers.json", Customers)   
         console.log("Done Adding ",{Transaction})
@@ -78,7 +81,7 @@ const ShowCustomers = ()=>{
         if(user.transactions.length != 0){
             displayed += "His Transactions : \n"
             user.transactions.forEach((transaction)=>{
-                displayed += `${transaction.type} => and its balance : ${transaction.balance} \n`
+                displayed += `${transaction.type} => its balance : ${transaction.balance} \n`
             })
         }else{
             displayed += "Has No Transactions :( \n"

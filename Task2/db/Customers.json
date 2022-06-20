@@ -1,7 +1,16 @@
 [
     {
         "accNum": 1655162844693,
-        "transactions": [],
+        "transactions": [
+            {
+                "type": "addBalance",
+                "balance": 1500
+            },
+            {
+                "type": "Withdraw",
+                "balance": 1500
+            }
+        ],
         "CustomerName": "mhmd",
         "CustomerBalance": 1500
     }

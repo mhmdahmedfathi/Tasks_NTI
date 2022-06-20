@@ -34,8 +34,8 @@ const TransactionData = [
         ele: "type",
         default: false,
         invalid: function (data) {
-            if(data === "withdraw" || data === "addBalance") return false
-            return "no"
+            if(data === "Withdraw" || data === "addBalance") return false
+            return "Make sure you entered the correct type"
         }
     },
     {

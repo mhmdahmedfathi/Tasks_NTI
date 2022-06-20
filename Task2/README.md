@@ -1,6 +1,6 @@
 ## About
 
-This is a task for testing argsument of function in javascript and deal with the console.
+This is a task for testing arguments using nodejs and deal with the console interface.
 the structure of the code is:
 
 -  index.js is the main file that will run the programm and contains yargs module.
@@ -12,12 +12,12 @@ the structure of the code is:
 
 ## 💻 Built Using <a name = "tech"></a>
 
-- [Javascript]()
+- [Nodejs]()
 - [CLI]()
 
 ## Logs
 
-<div name="Logs" align="center">
+<div name="Logs" align="left">
 
 ### Add Customer
 
