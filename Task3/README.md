@@ -24,7 +24,7 @@ If you want to start the app, you have to type `node index.js` in the console.
 
 <div name="Screenshots" align="center">
     
-## if you open index.html you will find
+## if you open localhost:3000 you will find
 
 <img width=100% src="Screenshots/1.png" alt="logo">
    <hr>
