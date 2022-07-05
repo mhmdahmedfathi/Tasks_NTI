@@ -8,7 +8,12 @@ const addTaskPage = (req, res) => {
 
 const addTaskLogic = (req, res) => {
     const allTasks = dealWithData.readDataFromJSON('./models/data.json')
-
+    if(req.body.title === "" || req.body.content === ""){
+        return res.render('add', {
+            notFound: true,
+            pageTitle: "Add new Task"
+        })
+    }
     let index = allTasks.findIndex((task) => task.title === req.body.title)
     if (index === -1) {
         allTasks.push({
