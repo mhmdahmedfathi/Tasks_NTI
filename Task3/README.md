@@ -15,6 +15,10 @@ the structure of the code is:
 - [Nodejs]()
 - [hbs]()
 
+## how to start
+
+If you want to start the app, you have to type `node index.js` in the console.
+
 
 ## 📷 Screenshots
 
