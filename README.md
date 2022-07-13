@@ -24,7 +24,7 @@ This repo contains solutions of all tasks done during NTI internship
 
 Every folder is a task done during certain interval of time 
 
-Task1 - is about javascript DOM so you can train your JavaScript DOM skills and 
+Task1 - is about JavaScript DOM so you can train your JavaScript DOM skills and 
         learn how to use it by adding some elements to the page and removing others 
         So you can control all elements using JavaScript DOM
 
