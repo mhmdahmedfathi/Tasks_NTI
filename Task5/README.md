@@ -1,7 +1,8 @@
 ## About
-
-    this is simulation of bank which you can add clients and do more than one transaction for each client and
-    save all this informations in localstorage
+   
+   (Mongoose_Task1)
+   this is simulation of bank which you can add clients and do more than one transaction for each client and
+   save all this informations in mongoose
 
 ## 💻 Built Using <a name = "tech"></a>
 - [HTML]()
