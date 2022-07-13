@@ -1,28 +1,32 @@
-# Tasks_NTI
+# NTI Tasks
 
 <div align="center">
 
 [![GitHub issues](https://img.shields.io/github/issues/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/issues)
-
+[![GitHub forks](https://img.shields.io/github/forks/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/network)
+[![GitHub stars](https://img.shields.io/github/stars/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/stargazers)
 </div>
 
 
 ## About
 
-This Repo is responsible for all tasks Done during NTI internship
+This repo contains solutions of all tasks done during NTI internship
 
 
-## Languages
+## Technologies
 
-Languages used are :  Nodejs , MongoDB,mongoose,javascript DOM , HBS
+- Nodejs  
+- MongoDB
+- JavaScript DOM 
+- Handlebars (HBS)
 
-## What to do ?
+## Tasks details
 
 Every folder is a task done during certain interval of time 
 
-Task1 - is about javascript DOM so you can train your javascript DOM skills and 
+Task1 - is about javascript DOM so you can train your JavaScript DOM skills and 
         learn how to use it by adding some elements to the page and removing others 
-        So you can control all elements using javascript dom
+        So you can control all elements using JavaScript DOM
 
 Task2 - is about args in Nodejs and how to write arg and expect to get it in your code 
         and how you can handle any error that may come from it 
