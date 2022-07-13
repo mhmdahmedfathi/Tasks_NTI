@@ -6,6 +6,11 @@
                 <td colspan="4">Title must be unique</td>
             </tr>
         {{/if}}
+        {{#if notFound}}
+            <tr class="alert alert-danger text-center">
+                <td colspan="4">Make sure you typed everything correct</td>
+            </tr>
+        {{/if}}
         <div class="mb-3">
             <input class="form-control" placeholder="title" name="title">
         </div>

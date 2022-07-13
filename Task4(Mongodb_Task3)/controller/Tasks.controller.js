@@ -11,6 +11,12 @@ const addTaskPage = (req, res) => {
 const addTaskLogic = (req, res) => {
     dbcon((e,client,db)=>{
         if(e) return res.send(e.message)
+        if (req.body.title === "" || req.body.content === "") {
+            return res.render("add", {
+                notFound:true,
+                pageTitle: "add new Task"
+            })
+        }
         db.collection("Tasks").find().toArray((err,result)=>{
             let index = result.findIndex((task) => task.title === req.body.title)
             if (index === -1) {
