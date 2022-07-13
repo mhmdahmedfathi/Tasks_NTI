@@ -3,7 +3,6 @@
 
 <div align="center">
 
-[![GitHub contributors](https://img.shields.io/github/contributors/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/issues)
 [![GitHub forks](https://img.shields.io/github/forks/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/network)
 [![GitHub stars](https://img.shields.io/github/stars/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/stargazers)
@@ -20,19 +19,26 @@ This Repo is responsible for all tasks Done during NTI internship
 
 ## Languages
 
-Languages used are :  Nodejs , MongoDB , HBS
+Languages used are :  Nodejs , MongoDB,mongoose,javascript DOM , HBS
 
 ## What to do ?
 
-Every folder is a task done during certien intervel of time 
+Every folder is a task done during certain interval of time 
 
-Task1 - is about javascript DOM 
+Task1 - is about javascript DOM so you can train your javascript DOM skills and 
+        learn how to use it by adding some elements to the page and removing others 
+        So you can control all elements using javascript dom
 
-Task2 - is about args in javascript and how to wait arg and how to deal with it
+Task2 - is about args in Nodejs and how to write arg and expect to get it in your code 
+        and how you can handle any error that may come from it 
 
-Task3 - is to connect nodejs with HBS and make a simple project
+Task3 - make a simple project using nodejs as a backend and HBS as a frontend 
+        and make it dynamic so you can add new clients and transactions and 
+        see the changes in the page
 
-Task4 - is about two tasks => First One is doing Task3 again but with mongodb instead of writing in json file
-                              Second one is doing Task1 again using mongoose
+Task4 - is to use mongodb in Task3 instead of writing in json file so you can deal with 
+        data in mongodb and not in json file which is done in real life applications
                               
-Task5 - is using nodejs but with upload images and using salts and send messages
+Task5 - is to use mongodb in Task1 instead of writing in local storage so you can deal with 
+        data in mongodb and not in json file which is done in real life applications
+                              
