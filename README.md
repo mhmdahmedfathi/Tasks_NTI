@@ -1,5 +1,10 @@
 # Tasks_NTI
 
+<div align="center">
+
+[![GitHub issues](https://img.shields.io/github/issues/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/issues)
+
+</div>
 
 
 ## About
