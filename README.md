@@ -1,16 +1,6 @@
 # Tasks_NTI
 
 
-<div align="center">
-
-[![GitHub issues](https://img.shields.io/github/issues/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/issues)
-[![GitHub forks](https://img.shields.io/github/forks/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/network)
-[![GitHub stars](https://img.shields.io/github/stars/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/stargazers)
-[![GitHub license](https://img.shields.io/github/license/mhmdahmedfathi/Tasks_NTI)](https://github.com/mhmdahmedfathi/Tasks_NTI/blob/main/LICENSE)
-
-</div>
-
-
 
 ## About
 
